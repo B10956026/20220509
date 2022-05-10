@@ -1,0 +1,21 @@
+測試 PostTodoItem：
+	按 Ctrl+F5 執行應用程式。
+	開啟新的終端機視窗，然後執行下列命令。
+		httprepl https://localhost:44329/api/TodoItems
+		post -h Content-Type=application/json -c "{"name":"walk dog","isComplete":true}"
+
+檢查 GET 方法：
+	GET /api/todoitems：
+		connect https://localhost:44329/api/TodoItems
+		get
+	GET /api/todoitems/{id}
+		connect https://localhost:44329/api/TodoItems/1
+		get
+
+測試 PutTodoItem 方法：
+	connect https://localhost:44329/api/TodoItems/1
+	put -h Content-Type=application/json -c "{"id":1,"name":"feed fish","isComplete":true}"
+
+測試 DeleteTodoItem 方法：
+	connect https://localhost:44329/api/TodoItems/1
+	delete		
